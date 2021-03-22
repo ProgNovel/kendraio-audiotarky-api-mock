@@ -1,0 +1,10 @@
+name = "kendraio-audiotarky"
+type = "webpack"
+account_id = "5571df7e5f6f67aa1a8af20dbd05e030"
+workers_dev = true
+route = ""
+zone_id = ""
+webpack_config = "webpack.config.js"
+kv-namespaces = [
+  { binding = "BUCKET", id = "1ec290c449c642a1abddbde04caee660" }
+]

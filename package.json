@@ -1,0 +1,30 @@
+{
+  "name": "kendraio-audiotarky-api",
+  "version": "1.0.0",
+  "description": "Audiotarky integration microservice for Kendraio app.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "NODE_ENV=development npm run build",
+    "format": "prettier --write src/**/*.{ts,js,css,json,md}",
+    "test:clean": "rimraf ./transpiled/src ./transpiled/test",
+    "test": "npm run test:clean && npm run transpile && mocha --require source-map-support/register --recursive transpiled/test",
+    "transpile": "tsc --project ./test"
+  },
+  "author": "author",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.1.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "service-worker-mock": "^2.0.3",
+    "source-map-loader": "^2.0.0",
+    "source-map-support": "^0.5.19",
+    "ts-loader": "^8.0.16",
+    "typescript": "^4.1.3",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+  }
+}
