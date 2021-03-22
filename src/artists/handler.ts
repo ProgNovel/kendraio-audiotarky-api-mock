@@ -8,10 +8,13 @@ export async function handleArtists(event: FetchEvent, page?: string): Promise<R
   }index.json`;
   const response = await fetch(endpoint);
   const data = await response.json();
-  const result = [];
+  const result: any = {
+    pagination: data.pagination,
+    artists: [],
+  };
 
   for (const artist in data.artists) {
-    result.push({
+    result.artists.push({
       title: artist,
       api: data.artists[artist],
     });
