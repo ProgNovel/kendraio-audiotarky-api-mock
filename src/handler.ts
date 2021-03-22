@@ -15,11 +15,11 @@ export async function handleRequest(event: FetchEvent): Promise<Response> {
 
   if (path === '/') {
     return handleInit(event);
-  } else if (path === '/artists') {
+  } else if (route === 'artists') {
     return handleArtists(event, page);
-  } else if (path === '/albums') {
+  } else if (route === 'albums') {
     return handleAlbums(event, page);
-  } else if (path === '/genres') {
+  } else if (route === 'genres') {
     return handleGenres(event);
   }
 
