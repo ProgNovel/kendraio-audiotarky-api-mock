@@ -5,6 +5,3 @@ workers_dev = true
 route = ""
 zone_id = ""
 webpack_config = "webpack.config.js"
-kv-namespaces = [
-  { binding = "BUCKET", id = "1ec290c449c642a1abddbde04caee660" }
-]
