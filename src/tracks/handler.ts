@@ -9,6 +9,7 @@ export async function handleTracks(event: FetchEvent, page?: string): Promise<Re
     const data = await response.json();
     return new Response(JSON.stringify(data, null, 2), { headers });
   } catch (err) {
+    console.error(err);
     return new Response('Error fetching ' + endpoint, { status: 500, headers });
   }
 }
