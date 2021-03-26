@@ -15,15 +15,15 @@ export async function handleRequest(event: FetchEvent): Promise<Response> {
   }
 
   if (path === '/') {
-    return handleInit(event);
+    return await handleInit(event);
   } else if (route === 'artists') {
-    return handleArtists(event, page);
+    return await handleArtists(event, page);
   } else if (route === 'albums') {
-    return handleAlbums(event, page);
+    return await handleAlbums(event, page);
   } else if (route === 'genres') {
-    return handleGenres(event);
+    return await handleGenres(event);
   } else if (route === 'tracks') {
-    return handleTracks(event, page);
+    return await handleTracks(event, page);
   }
 
   return new Response(`Invalid route 404. Path ${path} not found.`);
