@@ -2,6 +2,7 @@ import { handleArtists } from './artists/handler';
 import { handleGenres } from './genres/handler';
 import { handleInit } from './_init/init-handler';
 import { handleAlbums } from './albums/handler';
+import { handleTracks } from './tracks/handler';
 
 export async function handleRequest(event: FetchEvent): Promise<Response> {
   const request: Request = event.request;
@@ -21,6 +22,8 @@ export async function handleRequest(event: FetchEvent): Promise<Response> {
     return handleAlbums(event, page);
   } else if (route === 'genres') {
     return handleGenres(event);
+  } else if (route === 'tracks') {
+    return handleTracks(event, page);
   }
 
   return new Response(`Invalid route 404. Path ${path} not found.`);
