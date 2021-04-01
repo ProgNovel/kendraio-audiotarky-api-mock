@@ -9,6 +9,7 @@ export async function handleTracks(event: FetchEvent, page?: string): Promise<Re
     const response = await fetch(endpoint);
     console.log(response);
     const data = await response.json();
+    data.api_page2 = data.api_page.split('audiotarky.com')[1]
     console.log(data);
     return new Response(JSON.stringify(data, null, 2), { headers });
   } catch (err) {
