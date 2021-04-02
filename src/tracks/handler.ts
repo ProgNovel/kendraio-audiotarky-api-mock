@@ -10,7 +10,8 @@ export async function handleTracks(event: FetchEvent, page?: string): Promise<Re
     console.log(response);
     const data = await response.json();
     data.tracks = data.tracks.map(track => {
-      track.api_page2 = track.api_page.split('audiotarky.com')[1];
+      track.api_page2 = '/api/' + track.api_page.split('/$/')[1];
+      if (!track.api_page2) track.api_page2 = track.api_page.split('audiotarky.com')[1]
       return track
     });
     
